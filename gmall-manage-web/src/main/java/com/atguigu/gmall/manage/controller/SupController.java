@@ -6,7 +6,7 @@ import com.atguigu.gmall.service.SpuService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,11 +14,8 @@ import java.util.List;
 @CrossOrigin
 public class SupController {
     @Reference
-
     SpuService spuService;
-
-
-    @RequestMapping("supList")
+    @RequestMapping("spuList")
     @ResponseBody
     public List<PmsProductInfo> supList(String catalog3Id){
 
