@@ -5,11 +5,10 @@ import com.atguigu.gmall.bean.PmsBaseAttrInfo;
 import com.atguigu.gmall.bean.PmsBaseSaleAttr;
 import com.atguigu.gmall.bean.PmsProductInfo;
 import com.atguigu.gmall.service.AttrService;
+import com.sun.xml.internal.ws.encoding.xml.XMLMessage;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -29,8 +28,6 @@ public class AttrController {
     @RequestMapping("saveAttrInfo")
     @ResponseBody
     public String saveAttrInfo(@RequestBody PmsBaseAttrInfo pmsBaseAttrInfo){
-
-
         String success = attrService.saveAttrInfo(pmsBaseAttrInfo);
         return "success";
     }
@@ -45,13 +42,5 @@ public class AttrController {
     public List<PmsBaseAttrInfo> attrInfoList(String catalog3Id){
         List<PmsBaseAttrInfo> pmsBaseAttrInfos =  attrService.attrInfoList(catalog3Id);
         return pmsBaseAttrInfos;
-    }
-    @RequestMapping("saveSpuInfo")
-    @ResponseBody
-    public String saveSpuInfo(@RequestBody PmsProductInfo pmsProductInfo){
-
-
-//        String success = attrService.saveSpuInfo(pmsBaseAttrInfo);
-        return "success";
     }
 }
