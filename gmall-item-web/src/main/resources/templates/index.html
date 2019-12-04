@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+hello thymeleaf
+<br>
+
+<!-- 取值 -->
+
+<br />
+<!--/*@thymesVar id="hello" type="java.lang.String"*/-->
+<p th:text="${hello}">打底值</p>
+
+<!-- 循环-->
+    <!--/*@thymesVar id="list" type="apple"*/-->
+    <p th:each="str:${list}" th:text="${str}"></p>
+
+    <p th:each="str:${list}">
+        <input th:text="${str}" th:value="${str}" value="1111"/>
+    </p>
+    <!-- 传递给JavaScript-->
+<!--    <a href="javascript:a();">点我</a>-->
+        <a th:href="'javascript:a(\''+${hello}+'\');'">点我</a>
+        <br/>
+
+        <a th:include="indexInner::innerPart"></a>
+<script language="JavaScript">
+
+    function a() {
+        alert("我来了.....");
+
+    }
+</script>
+</body>
+</html>

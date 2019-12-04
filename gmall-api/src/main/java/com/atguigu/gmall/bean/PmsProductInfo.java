@@ -1,8 +1,5 @@
 package com.atguigu.gmall.bean;
 
-import com.atguigu.gmall.bean.PmsProductImage;
-import com.atguigu.gmall.bean.PmsProductSaleAttr;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
